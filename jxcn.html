@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e07256;
+
+        }
+        .calculator{
+            background-color: rgb(140, 226, 133);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(rgb(151, 86, 48), green, blue, alpha);
+            
+        }
+        
+        input,button{
+            margin:5px ;
+            padding: 10px;
+            font-size:10px ;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="calculator"><h3>Calculator</h3>
+        <br>
+        <input type="number" id="num1" placeholder="First Number">
+        <input type="number" id="num2" placeholder="Second Number">
+        <br>
+        <button onclick="res = calculator('+')">+</button>
+        <button onclick="res = calculator('-')">-</button>
+        <button onclick="res = calculator('*')">*</button>
+        <button onclick="res = calculator('/')">/</button><br>
+        <!-- <h3 id="result">Result</h3> -->
+        <button onclick="alert('The result is:'+res)">Result</button>
+    </div>
+    <script src="jrek.js">
+        let res;
+    </script>
+</body>
+</html>
