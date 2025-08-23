@@ -1,26 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouTube Subscribe Clone</title>
+  <style>
+    body {
+      font-family: Roboto, Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #0f0f0f;
+    }
+
+    .subscribe-button {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      padding: 10px 16px 10px 44px; /* extra left padding for logo */
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg');
+      background-repeat: no-repeat;
+      background-size: 24px auto;
+      background-position: 12px center;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .subscribe-button:hover {
+      background-color: #b30000;
+    }
+
+    .is-subscribed {
+      background-color: #e5e5e5;
+      color: #606060;
+      background-image: none;
+      padding-left: 16px; /* reset padding if no logo shown */
+    }
+
+    .is-subscribed:hover {
+      background-color: #d3d3d3;
+    }
+  </style>
 </head>
 <body>
-    <p>
-        YouTube Subscribe Button
-    </p>
-    <button onclick="subscribe()" class="js-subscribe-button">Subscribe</button>
-    <script>
-        function subscribe(){
-            const buttonElement = document.querySelector('.js-subscribe-button')
-            if(buttonElement.innerHTML === 'Subscribe'){
-            buttonElement.innerHTML = 'Subscribed';
-            }
-            else
-            {
-                buttonElement.innerHTML = 'Subscribe';
-            }
-        }
-    </script>
+  <p>YouTube Subscribe Button</p>
+  <button onclick="subscribe()" class="js-subscribe-button subscribe-button">Subscribe</button>
+
+  <script>
+    function subscribe() {
+      const buttonElement = document.querySelector('.js-subscribe-button');
+      if (buttonElement.innerHTML === 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
+        buttonElement.innerHTML = 'Subscribe';
+      }
+    }
+  </script>
 </body>
 </html>
